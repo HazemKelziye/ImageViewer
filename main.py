@@ -8,8 +8,13 @@ import os
 # cv2.IMREAD_UNCHANGED to open the image as it is
 # include the image file in the project folder
 
-img = cv2.imread("Mecca.jpeg", cv2.IMREAD_UNCHANGED)
-img2 = cv2.imread("MePlusMyHand.jpeg", cv2.IMREAD_UNCHANGED)
+img1 = cv2.imread("images/Mecca.jpeg", cv2.IMREAD_UNCHANGED)
+img2 = cv2.imread("images/Testt.png", cv2.IMREAD_UNCHANGED)
+img3 = cv2.imread("images/KohiCup.png", cv2.IMREAD_UNCHANGED)
+img4 = cv2.imread("images/ConfCat.jpeg", cv2.IMREAD_UNCHANGED)
+img5 = cv2.imread("images/FamousIm.png", cv2.IMREAD_UNCHANGED)
+
+
 # Note!
 # OpenCV uses BGR image format. So, when we read an image using cv2.
 # imread() it interprets in BGR format by default.
@@ -17,11 +22,20 @@ img2 = cv2.imread("MePlusMyHand.jpeg", cv2.IMREAD_UNCHANGED)
 # But since we can convert direcrtly from BGR to HSV so...
 
 # Converting from BGR/RGB to HSV/HSI
-hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+hsv_img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
+rgb_img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
 
 hsv_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2HSV)
 rgb_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
+
+hsv_img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2HSV)
+rgb_img3 = cv2.cvtColor(img3, cv2.COLOR_BGR2RGB)
+
+hsv_img4 = cv2.cvtColor(img4, cv2.COLOR_BGR2HSV)
+rgb_img4 = cv2.cvtColor(img4, cv2.COLOR_BGR2RGB)
+
+hsv_img5 = cv2.cvtColor(img5, cv2.COLOR_BGR2HSV)
+rgb_img5 = cv2.cvtColor(img5, cv2.COLOR_BGR2RGB)
 # This creates a GUI window with a title name of your choice
 
 # cv2.imshow("HSV Mecca",hsv_img)
@@ -36,9 +50,9 @@ rgb_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
 # Accessing a single pixel value in OpenCV
 # In our case we are going to access the Voxel since it has 3-channels
-print(f"This is the value of voxel at (0,0): {img[0, 0]} for the BGR Image")
-print(f"This is the value of voxel at (0,0): {rgb_img[0, 0]} for the RGB Image")
-print(f"This is the value of voxel at (0,0): {hsv_img[0, 0]} for the HSV Converted Image")
+print(f"This is the value of voxel at (0,0): {img1[0, 0]} for the BGR Image")
+print(f"This is the value of voxel at (0,0): {rgb_img1[0, 0]} for the RGB Image")
+print(f"This is the value of voxel at (0,0): {hsv_img1[0, 0]} for the HSV Converted Image")
 
 #Getting my hands dirty with Tkinter
 
@@ -46,7 +60,6 @@ print(f"This is the value of voxel at (0,0): {hsv_img[0, 0]} for the HSV Convert
 root = Tk()
 # root.geometry("800x600+300+150")
 root.resizable(width=True, height=True)
-root.geometry("500x500")
 
 # def openfn():
 #     '''Accessing the file name extension'''
@@ -68,22 +81,125 @@ root.geometry("500x500")
 # To convert images from Opencv dataType to Pillow dataType use Image.fromarray()
 # Since PIL reads the image as RGB we cant call the img instance
 # We will call the rgb_img
-TkImageRGB = Image.fromarray(rgb_img)
-TkinterRGB = ImageTk.PhotoImage(image=TkImageRGB)
-Label(root, image= TkinterRGB).grid(row=0, column=0)
+TkImageRGB1 = Image.fromarray(rgb_img1)
+TkinterRGB1 = ImageTk.PhotoImage(image=TkImageRGB1)
+TkImageHSV1 = Image.fromarray(hsv_img1)  # Converting the image from Opencv format to Pillow format
+TkinterHSV1 = ImageTk.PhotoImage(image=TkImageHSV1)
 
-TkImageHSV = Image.fromarray(hsv_img)  # Converting the image from Opencv format to Pillow format
-TkinterHSV = ImageTk.PhotoImage(image=TkImageHSV)
-Label(root, image= TkinterHSV).grid(row=0, column=1)
-
-TkImageRGB2 = Image.fromarray(rgb_img2).resize((380,500))
+TkImageRGB2 = Image.fromarray(rgb_img2)
 TkinterRGB2 = ImageTk.PhotoImage(image=TkImageRGB2)
-Label(root, image= TkinterRGB2).grid(row=1, column=0)
-
-TkImageHSV2 = Image.fromarray(hsv_img2).resize((380,500))
+TkImageHSV2 = Image.fromarray(hsv_img2)  # Converting the image from Opencv format to Pillow format
 TkinterHSV2 = ImageTk.PhotoImage(image=TkImageHSV2)
-Label(root, image= TkinterHSV2).grid(row=1, column=1)
 
+TkImageRGB3 = Image.fromarray(rgb_img3)
+TkinterRGB3 = ImageTk.PhotoImage(image=TkImageRGB3)
+TkImageHSV3 = Image.fromarray(hsv_img3)  # Converting the image from Opencv format to Pillow format
+TkinterHSV3 = ImageTk.PhotoImage(image=TkImageHSV3)
+
+TkImageRGB4 = Image.fromarray(rgb_img4)
+TkinterRGB4 = ImageTk.PhotoImage(image=TkImageRGB4)
+TkImageHSV4 = Image.fromarray(hsv_img4)  # Converting the image from Opencv format to Pillow format
+TkinterHSV4 = ImageTk.PhotoImage(image=TkImageHSV4)
+
+TkImageRGB5 = Image.fromarray(rgb_img5)
+TkinterRGB5 = ImageTk.PhotoImage(image=TkImageRGB5)
+TkImageHSV5 = Image.fromarray(hsv_img5)  # Converting the image from Opencv format to Pillow format
+TkinterHSV5 = ImageTk.PhotoImage(image=TkImageHSV5)
+
+image_list_rgb = [TkinterRGB1, TkinterRGB2, TkinterRGB3, TkinterRGB4, TkinterRGB5]
+image_list_hsv = [TkinterHSV1, TkinterHSV2, TkinterHSV3, TkinterHSV4, TkinterHSV5]
+
+current = 0
+
+status = IntVar()
+status.set(0)
+
+print("value of status",status.get())
+
+
+
+def clicked():
+    global current
+    global my_label
+
+    my_label.grid_forget()
+
+    if status.get()==0:
+        my_label = Label(image=image_list_rgb[current])
+    else:
+        my_label = Label(image=image_list_hsv[current])
+
+    my_label.grid(row=0, column=1)
+
+
+Radiobutton(root, text="Convert to HSV domain", variable=status, value=1, command=clicked).grid(row=2, column=1)
+Radiobutton(root, text="Convert to RGB domain", variable=status, value=0, command=clicked).grid(row=3, column=1)
+
+if status.get() == 0:
+    my_label = Label(image=TkinterRGB1)
+else:
+    my_label = Label(image=TkinterHSV1)
+
+my_label.grid(row=0, column=1)
+
+
+def forward(image_number):
+    global my_label
+    global button_forward
+    global button_back
+    global current
+
+    current = image_number + 1
+
+    if current == 5:
+        current = 0
+
+    my_label.grid_forget()
+    if status.get()==0:
+        my_label = Label(image=image_list_rgb[current])
+    else:
+        my_label = Label(image=image_list_hsv[current])
+
+    button_forward = Button(root, text=">>", command=lambda: forward(current))
+    button_back = Button(root, text="<<", command=lambda: back(current))
+
+    my_label.grid(row=0, column=1)
+    button_forward.grid(row=1, column=2)
+    button_back.grid(row=1, column=0)
+
+def back(image_number):
+    global my_label
+    global button_forward
+    global button_back
+    global current
+
+    current = image_number -1
+
+    if current == -1:
+        current = 4
+
+    my_label.grid_forget()
+    if status.get()==0:
+        my_label = Label(image=image_list_rgb[current])
+    else:
+        my_label = Label(image=image_list_hsv[current])
+
+    button_forward = Button(root, text=">>", command=lambda: forward(current))
+    button_back = Button(root, text="<<", command=lambda: back(current))
+
+
+    my_label.grid(row=0, column=1)
+    button_forward.grid(row=1, column=2)
+    button_back.grid(row=1, column=0)
+
+
+button_forward = Button(root, text=">>", command=lambda: forward(0))
+button_back = Button(root, text="<<", command=back)
+exit_button = Button(root, text="Exit program", command=root.quit)
+
+exit_button.grid(row=1, column=1)
+button_back.grid(row=1, column=0)
+button_forward.grid(row=1, column=2)
 # Label(root, image=TkinterHSV).pack()
 # def print_location(event):
 #     # print(f' location of x={event.x}, location of y ={event.y}')
