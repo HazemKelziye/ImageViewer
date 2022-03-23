@@ -26,6 +26,7 @@
     <property name="GitStage.ChangesTree.GroupingKeys" value="directory&#10;module&#10;repository" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowCommit.ShowToolbar" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -60,6 +61,14 @@
       <option name="presentableId" value="Default" />
       <updated>1647692779861</updated>
     </task>
+    <task id="LOCAL-00001" summary="Only getting the pixel values is left">
+      <created>1647934652921</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647934652921</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Only getting the pixel values is left" />
+    <option name="LAST_COMMIT_MESSAGE" value="Only getting the pixel values is left" />
   </component>
 </project>
